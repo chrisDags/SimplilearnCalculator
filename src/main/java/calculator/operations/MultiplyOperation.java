@@ -5,7 +5,7 @@ public final class MultiplyOperation {
     private double b;
 
     public double getMultiplyResult(){
-        return a * b;
+        return this.a * this.b;
     }
 
     public MultiplyOperation(double a, double b) {

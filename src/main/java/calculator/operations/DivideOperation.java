@@ -5,7 +5,7 @@ public final class DivideOperation {
     private double b;
 
     public double getDivideResult(){
-        return a / b;
+        return this.a / this.b;
     }
 
     public DivideOperation(double a, double b) {

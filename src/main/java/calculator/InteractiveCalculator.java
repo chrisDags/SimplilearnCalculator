@@ -13,6 +13,9 @@ import java.util.Scanner;
     - take the operator
         - add / subtract / divide / multiply
     - print the result to console
+
+
+    Modifiers used in this project: public, default(no modifier), private
  */
 
 class InteractiveCalculator {
@@ -20,17 +23,15 @@ class InteractiveCalculator {
         Scanner scanner = new Scanner(System.in);
         double result;
 
-        System.out.println("Give me a number please: ");
-        double a = scanner.nextInt();
-        //scanner.nextInt();
-        System.out.println("Please give me another number: ");
-        double b = scanner.nextInt();
+        System.out.println("Enter number A: ");
+        double a = scanner.nextDouble();
+
+        System.out.println("Enter number B: ");
+        double b = scanner.nextDouble();
 
         scanner.nextLine();
-        System.out.println("Please give me an operation: ");
+        System.out.println("Please give me an operation (add, subtract, multiply, divide): ");
         String operation = scanner.nextLine();
-
-        System.out.println(a + " " + operation + " " + b);
 
         operation = operation.toLowerCase();
 
@@ -38,26 +39,32 @@ class InteractiveCalculator {
             case "add":
                 AddOperation addOperation = new AddOperation(a, b);
                 result = addOperation.getAddResult();
-                System.out.println("Add result: " + result);
+                System.out.println(a + " " + operation +" "+ b + " = " + result);
                 break;
             case "subtract":
                 SubtractOperation subtractOperation = new SubtractOperation(a, b);
                 result = subtractOperation.getSubtractionResult();
-                System.out.println("Subtract result: " + result);
+                System.out.println(a + " " + operation +" "+ b + " = " + result);
                 break;
             case "multiply":
                 MultiplyOperation multiplyOperation = new MultiplyOperation(a, b);
                 result = multiplyOperation.getMultiplyResult();
-                System.out.println("multiplication result: " + result);
+                System.out.println(a + " " + operation + " " + b + " = " + result);
                 break;
             case "divide":
+
                 if(b == 0){
                     System.out.println("ERROR: Cannot divide by 0.");
                     return;
                 }
+
                 DivideOperation divideOperation = new DivideOperation(a, b);
+
                 result = divideOperation.getDivideResult();
-                System.out.println("divide operation result: " + result);
+                System.out.println(a + " " + operation + " "+ b + " = " + result);
+                break;
+            default:
+                System.out.println("Operation not recognized");
                 break;
         }
 
