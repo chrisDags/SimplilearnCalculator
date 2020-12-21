@@ -15,7 +15,9 @@ import java.util.Scanner;
     - print the result to console
 
 
-    Modifiers used in this project: public, default(no modifier), private
+    Modifiers used in this project: public, default(no modifier), private.
+
+    Minimal error handling was done, as it was specified during the session that error handling isn't required
  */
 
 class InteractiveCalculator {
@@ -54,7 +56,7 @@ class InteractiveCalculator {
             case "divide":
 
                 if(b == 0){
-                    System.out.println("ERROR: Cannot divide by 0.");
+                    System.out.println("ERROR: Cannot divide by 0");
                     return;
                 }
 
